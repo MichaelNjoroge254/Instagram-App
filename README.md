@@ -42,7 +42,7 @@ a clone of the website for the popular photo app Instagram
 
 ## Authors
 
-* **Michael Njoroge** - *Initial work* - [PurpleBooth](https://github.com/MichaelNjoroge254)
+* **Michael Njoroge** - *Initial work* - [Instagram-App](https://github.com/MichaelNjoroge254)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 

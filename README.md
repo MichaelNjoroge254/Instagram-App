@@ -44,8 +44,6 @@ a clone of the website for the popular photo app Instagram
 
 * **Michael Njoroge** - *Initial work* - [Instagram-App](https://github.com/MichaelNjoroge254/Instagram-App.git)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
 ## Licence
 The MIT License (MIT)
 Copyright (c) 2020 Simon Kimani

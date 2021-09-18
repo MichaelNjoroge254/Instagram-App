@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+{% block content %}
+<style>
+    body{
+        margin-top: 100px;
+        text-align: center;
+    }
+   
+    .prof_pic{
+        border: 2px solid #c90a79;
+        padding: 2px;
+        border-radius: 150px;
+        height: 50px;
+        width:100px;
+    }
+    .view_prof{
+        background-color: #c90a79;
+        color:white;
+    }
+</style>
+<div class="container">
+    <h3><b>people</b></h3><hr>
+   
+    {% for user in users %}
+    <div class="row"> 
+        <div class="col-md-4">
+               
+                <img class="prof_pic" src="{{user.profile_picture.url}}" alt="profile_img">
+              
+                
+        </div>
+        <div class="col-md-2">
+            <b>{{user.name.username}}</b>
+            <p>{{user.bio}}</p>
+        </div>
+        <div class="col-md-2">
+         
+            following:<b> {{user.following.count}}</b><br>
+            
+            
+         
+        </div>
+    
+        <div class="col-md-4"> 
+            <a href="{% url 'profile-detail-view' user.name.pk %}">
+           <button class="btn view_prof">view profile</button></a>
+        </div>
+         
+    </div>  
+    <hr>      
+        {% endfor %}
+     
+</div>
+
+{% endblock %}

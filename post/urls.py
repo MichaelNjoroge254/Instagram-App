@@ -1,4 +1,4 @@
-from django.conf.urls import path, include
+from django.urls import path, include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -13,7 +13,7 @@ urlpatterns=[
     path('',views.index,name = 'index'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('explore/', views.explore, name='explore'),
-    pathl('register/', views.register, name='register'),
+    path('register/', views.register, name='register'),
     #path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
     path('profile/', views.profile, name='profile'),

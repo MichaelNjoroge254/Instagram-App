@@ -1,0 +1,55 @@
+#phones{
+    margin-left: 45px;
+    margin-top: 30px;
+    width: 450px;
+    height: 630px;
+    position: relative;
+}
+.app{
+    
+    margin-left: 20px;
+    
+}
+#app{
+    margin-left: 20px;
+    width: 130px;
+    height: 40px;   
+}
+#name{
+    font-weight: bold;
+    text-align: center;
+}
+.login{
+    margin-top: 100px;
+    margin-left: 40px;
+    
+    
+}
+.footer{
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.footer li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+.footer li a{
+    color: rgb(2, 2, 121);
+    
+}
+.footer li a:hover{
+    text-decoration: none;
+}
+#shot{
+    position: relative;
+    height:434px ;
+    width:238px ;
+    margin-top: 37px;
+    margin-left: -300px;
+}
+.copy{
+    color: gray;
+}

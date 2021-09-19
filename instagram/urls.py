@@ -13,8 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
+# import tensorflow.compat.v1 as tf
+# tf.disable_v2_behavior()
+
 from django.urls import path, include
+from django.contrib import admin
 from post import views as user_views
 
 

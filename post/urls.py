@@ -1,15 +1,15 @@
-from django.urls import path, include
 from . import views
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-#from .views import PostListView
+# from .views import PostListView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import views as auth_views
 from .views import ProfileDetailView
 
 
 
-urlpatterns=[
+urlpatterns = [
     path('',views.index,name = 'index'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('explore/', views.explore, name='explore'),

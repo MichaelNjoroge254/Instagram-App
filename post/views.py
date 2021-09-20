@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from django.http  import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import authenticate, login
 from .models import Image,Comment,Profile
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -32,7 +32,7 @@ def register(request):
 @login_required
 def create_post(request):
     current_user = request.user
-    form = PostForm()
+    form = P8000ostForm()
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES or None)
         if form.is_valid():
@@ -126,17 +126,16 @@ def detail(request,post_id):
     
 
 @login_required
-def profile(request):
+def profile(request, id):
     images = Image.objects.all()
-    #user_profile = get_object_or_404(User, pk=pk)
+    # user_profile = get_object_or_404(User, pk=pk)
    
     if request.method=='POST':
         user_form = UserUpdateForm(request.POST, instance=request.user)
         profile_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
-
+        profile_form.save()
         if user_form.is_valid() and profile_form.is_valid():
            user_form.save() 
-           profile_form.save()
            messages.success(request, f'Profile info updated successfully!')
            return redirect('profile' )
 

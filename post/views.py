@@ -50,7 +50,7 @@ def create_post(request):
 def index(request):
     images=Image.objects.all()
     #get logged in user profile
-    profile = Profile.objects.get(name=request.user)
+    profile = Profile.objects.get(name = request.user)
     # check who we are following
     users = [user for user in profile.following.all()]
     #variables
@@ -61,6 +61,7 @@ def index(request):
         p = Profile.objects.get(name=u)
         p_posts = p.profile_posts()
         posts.append(p_posts)
+        return render(request, "index.html", context)
     #get our posts
     my_posts=profile.profile_posts()
     posts.append(my_posts)

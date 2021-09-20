@@ -49,9 +49,20 @@ class Image(models.Model):
 
 class Profile(models.Model):
     name = models.OneToOneField(User, on_delete=models.CASCADE)
-    profile_picture = models.ImageField(upload_to='images/', default='default.png')
+    profile_picture = models.ImageField(upload_to='images/')
     bio = models.TextField(max_length=500, default="My Bio", blank=True)	  
     following = models.ManyToManyField(User, related_name='following', blank=True)
+
+    def __str__(self):
+        return f'{self.name.username} Profile'
+
+    def create_user_profile(sender, instance, created, **kwargs):
+
+        if created:
+            Profile.objects.create(user=instance)
+
+        post_save.connect(create_user_profile, sender=User)    
+
 
     @classmethod
     def search_by_name(cls, search_term):
@@ -70,11 +81,7 @@ class Profile(models.Model):
         return users
     
       
-    def __str__(self):
-        return f'{self.name.username} Profile'
-
-
-
+    
 class Comment(models.Model):
     comment = models.TextField()
     image = models.ForeignKey('Image', on_delete=models.CASCADE,related_name='comments',null='True', blank=True )

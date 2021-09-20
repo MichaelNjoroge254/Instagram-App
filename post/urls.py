@@ -10,11 +10,11 @@ from .views import ProfileDetailView
 
 
 urlpatterns = [
-    path('',views.index,name = 'index'),
+    path('index/',views.index,name = 'index'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('explore/', views.explore, name='explore'),
     path('register/', views.register, name='register'),
-    path('login/', auth_views.LoginView.as_view(), name='login'),
+    path('', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
     path('profile/', views.profile, name='profile'),
     path('post/(\d+)/delete',views.delete_post,name = 'delete'),
@@ -24,7 +24,7 @@ urlpatterns = [
     path('follow-unfollow/',views.follow_unfollow,name = 'follow-unfollow-view'),
     path('post/(\d+)',views.detail,name = 'detail'),
     path('search/', views.search_results, name='search'),
-    path('user/(P<pk>\d+)',views.ProfileDetailView.as_view(template_name='profile_detail.html'), name='profile-detail-view'),
+    path('user/(P<pk>)',views.ProfileDetailView.as_view(template_name='profile_detail.html'), name='profile-detail-view'),
 
    
     
